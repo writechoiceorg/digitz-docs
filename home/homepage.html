@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="../styles.css">
   <style>
     .rm-LandingPage {
       margin: auto !important;
@@ -12,14 +13,11 @@
       padding: 0 !important;
     }
 
-    * {
-      font-family: Inter;
-    }
-
     .rdmd-html {
       width: 100% !important;
     }
 
+    /* -------------------------------------------- HEADER SECTION -------------------------------------------- */
     .header_container {
       background-image: url('https://raw.githubusercontent.com/writechoiceorg/digitz-docs/main/home/images/header_bg.png');
       background-size: cover;
@@ -38,7 +36,7 @@
     }
 
     .header_container .hero_title h1 {
-      color: #382385;
+      color: var(--primary-6);
       font-family: Inter;
       font-size: 43.211px;
       font-style: normal;
@@ -49,7 +47,7 @@
     }
 
     .header_container .hero_content p {
-      color: #000;
+      color: var(--black);
       font-family: Inter;
       font-size: 18px;
       font-style: normal;
@@ -79,29 +77,25 @@
     }
 
     .header_container .hero_content .btn_container .hero_btn1 {
-      background: #744FFE;
-      color: #FFF;
+      background: var(--primary-1);
+      color: var(--white);
       border: 1px solid transparent;
     }
 
-    .header_container .hero_content .btn_container .hero_btn1:hover {
-      background: #FFF;
-      color: #744FFE;
-      border-color: #744FFE;
-    }
-
     .header_container .hero_content .btn_container .hero_btn2 {
-      border: 1px solid #CEC1FF;
-      color: #744FFE;
-      background: #FFF;
+      border: 1px solid var(--primary-7);
+      color: var(--primary-1);
+      background: var(--white);
     }
 
-    .header_container .hero_content .btn_container .hero_btn2:hover {
-      background: #744FFE;
-      color: #FFF;
-      border-color: transparent;
+    .header_container .hero_content .btn_container a:hover {
+      background: var(--primary-6);
+      border-color: var(--primary-1);
+      color: var(--white);
+      box-shadow: 0 10px 20px #282a3017;
     }
 
+    /* -------------------------------------------- CARDS SECTION -------------------------------------------- */
     .main_container {
       display: flex;
       gap: 20px;
@@ -123,7 +117,7 @@
 
     .main_container .card {
       border-radius: 6px;
-      border: 1px solid #CEC1FF;
+      border: 1px solid var(--primary-7);
       background: #F3F2F8;
       display: inline-flex;
       flex-direction: column;
@@ -135,7 +129,7 @@
 
     .main_container .card:hover {
       cursor: pointer;
-      border-color: #744FFE;
+      border-color: var(--primary-1);
       box-shadow: 0 10px 20px #282a3017;
       transform: translateY(-2px);
     }
@@ -344,11 +338,11 @@
 
     @media (prefers-color-scheme: dark) {
       [data-color-mode="system"] .header_container .header_content h1 {
-        color: #744FFE !important;
+        color: var(--primary-1) !important;
       }
 
       [data-color-mode="system"] .header_container .hero_content p {
-        color: #FFF !important;
+        color: var(--white) !important;
       }
 
       [data-color-mode="system"] .hero_container .hero_btn {
@@ -357,25 +351,25 @@
 
       [data-color-mode="system"] .header_container .hero_content .btn_container .hero_btn1:hover {
         background: transparent;
-        border-color: #CEC1FF;
-        color: #CEC1FF;
+        border-color: var(--primary-7);
+        color: var(--primary-7);
       }
 
       [data-color-mode="system"] .header_container .hero_content .btn_container .hero_btn2 {
-        border: 1px solid #CEC1FF;
-        color: #CEC1FF;
+        border: 1px solid var(--primary-7);;
+        color: var(--primary-7);;
         background: #242e34;
       }
 
       [data-color-mode="system"] .header_container .hero_content .btn_container .hero_btn2:hover {
-        background: #744FFE;
-        color: #FFF;
+        background: var(--primary-1);
+        color: var(--white);
         border-color: transparent;
       }
 
       [data-color-mode="system"] .card_container .card {
         background-color: #11191E !important;
-        color: #FFF;
+        color: var(--white);
         border-color: #382385;
       }
 
@@ -393,7 +387,7 @@
     }
 
     [data-color-mode="dark"] .header_container .header_content h1 {
-      color: #744FFE !important;
+      color: var(--primary-1) !important;
     }
 
     [data-color-mode="dark"] .header_container .hero_content p {
@@ -406,34 +400,34 @@
 
     [data-color-mode="dark"] .header_container .hero_content .btn_container .hero_btn1:hover {
       background: transparent;
-      border-color: #CEC1FF;
-      color: #CEC1FF;
+      border-color: var(--primary-7);
+      color: var(--primary-7);;
     }
 
     [data-color-mode="dark"] .header_container .hero_content .btn_container .hero_btn2 {
-      border: 1px solid #CEC1FF;
-      color: #CEC1FF;
+      border: 1px solid var(--primary-7);;
+      color: var(--primary-7);;
       background: #242e34;
     }
 
     [data-color-mode="dark"] .header_container .hero_content .btn_container .hero_btn2:hover {
-      background: #744FFE;
-      color: #FFF;
+      background: var(--primary-1);
+      color: var(--white);
       border-color: transparent;
     }
 
     [data-color-mode="dark"] .card_container .card {
       background-color: #11191E !important;
-      color: #FFF;
-      border-color: #382385;
+      color: var(--white);
+      border-color: var(--primary-6);
     }
 
     [data-color-mode="dark"] .card_container .card:hover {
-      border-color: #CEC1FF;
+      border-color: var(--primary-7);
     }
 
     [data-color-mode="dark"] .card_container .card h3 {
-      color: #CEC1FF;
+      color: var(--primary-7);
     }
 
     [data-color-mode="dark"] .card_container .card p {
