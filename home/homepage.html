@@ -42,7 +42,7 @@
       font-style: normal;
       font-weight: 700;
       line-height: normal;
-      margin: 100px 0 0;
+      margin: 60px 0 0;
       width: 590px;
     }
 
@@ -67,12 +67,12 @@
       flex-shrink: 0;
       border-radius: 6px;
       font-family: Inter;
-      font-size: 19.608px;
+      font-size: 18px;
       font-style: normal;
       font-weight: 700;
       line-height: normal;
       text-decoration: none;
-      padding: 15px 45px;
+      padding: 12px 40px;
       transition: all 0.3s ease;
     }
 
@@ -82,11 +82,11 @@
       border: 1px solid transparent;
     }
 
-    .header_container .hero_content .btn_container .hero_btn2 {
+    /* .header_container .hero_content .btn_container .hero_btn2 {
       border: 1px solid var(--primary-7);
       color: var(--primary-1);
       background: var(--white);
-    }
+    } */
 
     .header_container .hero_content .btn_container a:hover {
       background: var(--primary-6);
@@ -104,7 +104,7 @@
       margin: 40px auto;
       justify-content: center;
       align-items: center;
-      width: 85%;
+      width: 83%;
     }
 
     .main_container .card_container {
@@ -135,7 +135,7 @@
     }
 
     .main_container .large_card {
-      flex: 2;
+      flex: 3.5;
     }
 
     .main_container .large_card .card_image {
@@ -143,7 +143,7 @@
     }
 
     .main_container .small_card {
-      flex: 1;
+      flex: 2.5;
     }
 
     .main_container .small_card .card_image {
@@ -151,7 +151,7 @@
     }
 
     .main_container .card_image {
-      height: 202px;
+      height: 120px;
       flex-shrink: 0;
       width: 100% !important;
       background-position: center;
@@ -219,7 +219,6 @@
 
       .header_container .hero_title h1 {
         font-size: 36px;
-        margin: 100px 0 0;
         width: 500px;
       }
 
@@ -231,13 +230,17 @@
 
     @media only screen and (max-width: 1040px) {
       .header_container .hero_title h1 {
-        font-size: 30px;
+        font-size: 32px;
         width: 420px;
       }
 
       .header_container .hero_content p {
         font-size: 14px;
         width: 420px;
+      }
+
+      .header_container .hero_content .btn_container a {
+        font-size: 14px;
       }
     }
 
@@ -268,6 +271,11 @@
 
       .header_container .hero_content p {
         width: 340px;
+      }
+
+      .header_container .hero_content .btn_container a {
+        font-size: 14px;
+        padding: 10px 35px;
       }
     }
 
@@ -445,13 +453,11 @@
       <div class="hero_content">
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur.
+          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
         </p>
         <div class="btn_container">
           <a class="hero_btn1" href="docs">Get Started</a>
-          <a class="hero_btn2" href="docs">Get Started</a>
+          <!-- <a class="hero_btn2" href="docs">Get Started</a> -->
         </div>
       </div>
     </div>

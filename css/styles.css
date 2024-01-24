@@ -1,0 +1,40 @@
+* {
+  font-family: Inter;
+  --white: #FFF;
+  --black: #000;
+  --primary-1: #744FFE;
+  --primary-2: #070A22;
+  --primary-3: #A073FF;
+  --primary-4: #E2DAFF;
+  --primary-5: #F7F8FD;
+  --primary-6: #382385;
+  --primary-7: #CEC1FF;
+  --secondary-1: #FF971C;
+  --secondary-2: #42DDFF;
+  --secondary-3: #FFD2B9;
+  --secondary-4: #FF5959;
+  --gradient-1: linear-gradient(100deg, #A073FF 0%, #744FFE 100%);
+  --gradient-2: linear-gradient(100deg, #FFD2B9 0%, #BC93DA 51%, #744FFE 100%);
+  --Header-border-color: #e0e0e05b;
+}
+
+.Header3zzata9F_ZPQ.rm-Header .active {
+	background:  var(--primary-6) !important;
+}
+
+.rm-SearchToggle {
+	background:  var(--primary-6) !important;
+  border-color: var(--white) !important;
+}
+
+.rm-SearchToggle-placeholder, .icon-search1.rm-SearchToggle-icon, .rm-SearchToggle-shortcut {
+	color: var(--white) !important;
+}
+
+.Header-topuTMpygDG4e1V.rm-Header-top {
+	height: 80px;
+}
+
+.rm-Header-bottom {
+	height: 50px;
+}
