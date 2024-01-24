@@ -5,10 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="../styles.css">
   <style>
     .rm-LandingPage {
-      margin: auto !important;
+      /* margin: auto !important; */
       width: 100% !important;
       padding: 0 !important;
     }
@@ -18,13 +17,18 @@
     }
 
     /* -------------------------------------------- HEADER SECTION -------------------------------------------- */
-    .header_container {
+    .hero {
       background-image: url('https://raw.githubusercontent.com/writechoiceorg/digitz-docs/main/home/images/header_bg.png');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
       flex-shrink: 0;
-      margin: 0 0 0 140px;
+    }
+
+    .header_container {
+      margin: 0 auto 0 auto;
+      max-width: var(--container-lg);
+      padding: 0 20px;
     }
 
     .header_container .header_content {
@@ -104,7 +108,8 @@
       margin: 40px auto;
       justify-content: center;
       align-items: center;
-      width: 83%;
+      max-width: var(--container-lg) !important;
+      padding: 0 20px;
     }
 
     .main_container .card_container {
@@ -209,12 +214,22 @@
     @media only screen and (max-width: 1435px) {
       .header_container {
         margin: 0 0 0 60px;
+        padding: 0;
+      }
+
+      .main_container {
+        margin: 40px 60px;
+        padding: 0;
       }
     }
 
     @media only screen and (max-width: 1210px) {
       .header_container {
         margin: 0 0 0 40px;
+      }
+
+      .main_container {
+        margin: 40px 40px;
       }
 
       .header_container .hero_title h1 {
@@ -306,7 +321,12 @@
       }
 
       .main_container {
-        width: 90%;
+        display: flex;
+        padding: 28px;
+        margin: 0;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
       }
 
       .main_container .card_container {
@@ -364,8 +384,10 @@
       }
 
       [data-color-mode="system"] .header_container .hero_content .btn_container .hero_btn2 {
-        border: 1px solid var(--primary-7);;
-        color: var(--primary-7);;
+        border: 1px solid var(--primary-7);
+        ;
+        color: var(--primary-7);
+        ;
         background: #242e34;
       }
 
@@ -409,12 +431,15 @@
     [data-color-mode="dark"] .header_container .hero_content .btn_container .hero_btn1:hover {
       background: transparent;
       border-color: var(--primary-7);
-      color: var(--primary-7);;
+      color: var(--primary-7);
+      ;
     }
 
     [data-color-mode="dark"] .header_container .hero_content .btn_container .hero_btn2 {
-      border: 1px solid var(--primary-7);;
-      color: var(--primary-7);;
+      border: 1px solid var(--primary-7);
+      ;
+      color: var(--primary-7);
+      ;
       background: #242e34;
     }
 
@@ -445,19 +470,22 @@
 </head>
 
 <body class="body_container">
-  <header class="header_container">
-    <div class="header_content">
-      <div class="hero_title">
-        <h1>Digitz documentation</h1>
-      </div>
-      <div class="hero_content">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
-        </p>
-        <div class="btn_container">
-          <a class="hero_btn1" href="docs">Get Started</a>
-          <!-- <a class="hero_btn2" href="docs">Get Started</a> -->
+  <header class="hero">
+    <div class="header_container">
+      <div class="header_content">
+        <div class="hero_title">
+          <h1>Digitz documentation</h1>
+        </div>
+        <div class="hero_content">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore
+            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+          </p>
+          <div class="btn_container">
+            <a class="hero_btn1" href="docs">Get Started</a>
+            <!-- <a class="hero_btn2" href="docs">Get Started</a> -->
+          </div>
         </div>
       </div>
     </div>
