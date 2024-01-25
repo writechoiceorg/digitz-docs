@@ -36,7 +36,7 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      height: 90%;
+      height: 80%;
     }
 
     .header_container .hero_title h1 {
@@ -46,7 +46,7 @@
       font-style: normal;
       font-weight: 700;
       line-height: normal;
-      margin: 60px 0 0;
+      margin: 50px 0 0;
       width: 590px;
     }
 
@@ -205,11 +205,11 @@
     }
 
     /* ************************ MEDIA QUERIES ************************ */
-    @media only screen and (min-width: 1435px) {
-      .header_container {
+    /* @media only screen and (min-width: 1435px) {
+      .hero {
         background-position: 50px 0;
       }
-    }
+    } */
 
     @media only screen and (max-width: 1435px) {
       .header_container {
@@ -295,8 +295,8 @@
     }
 
     @media only screen and (max-width: 691px) {
-      .header_container {
-        background-position: -120px -50px;
+      .hero {
+        background-image: url('https://raw.githubusercontent.com/writechoiceorg/digitz-docs/main/home/images/hero_bg_small.png');
       }
 
       .header_container .hero_title h1 {
@@ -311,10 +311,6 @@
     }
 
     @media only screen and (max-width: 650px) {
-      .header_container {
-        background-position: -120px -50px;
-      }
-
       .header_container .hero_content .btn_container a {
         font-size: 14px;
         padding: 10px 30px;
@@ -334,19 +330,13 @@
       }
     }
 
-    @media only screen and (max-width: 500px) {
-      .header_container {
-        background-image: none;
-      }
-
-      .btn_container {
-        display: flex;
-        flex-direction: column;
-        width: fit-content;
+    @media only screen and (max-width: 530px) {
+      .header_container .hero_content p {
+        width: 300px;
       }
     }
 
-    @media only screen and (max-width: 432px) {
+    @media only screen and (max-width: 441px) {
       .header_container .hero_title h1 {
         margin: 25px 0 0;
         font-size: 22px;
@@ -357,6 +347,7 @@
         font-size: 12px;
         width: 80%;
         margin: 14px 0 0;
+        width: 280px;
       }
 
       .header_container {
@@ -364,9 +355,21 @@
       }
     }
 
+    @media only screen and (max-width: 405px) {
+      .header_container .hero_content p {
+        width: 260px;
+      }
+    }
+
+    @media only screen and (max-width: 310px) {
+      .header_container .hero_content p {
+        width: 80%;
+      }
+    }
+
     @media (prefers-color-scheme: dark) {
       [data-color-mode="system"] .header_container .header_content h1 {
-        color: var(--primary-1) !important;
+        color: var(--primary-3) !important;
       }
 
       [data-color-mode="system"] .header_container .hero_content p {
@@ -385,9 +388,7 @@
 
       [data-color-mode="system"] .header_container .hero_content .btn_container .hero_btn2 {
         border: 1px solid var(--primary-7);
-        ;
         color: var(--primary-7);
-        ;
         background: #242e34;
       }
 
@@ -417,7 +418,7 @@
     }
 
     [data-color-mode="dark"] .header_container .header_content h1 {
-      color: var(--primary-1) !important;
+      color: var(--primary-3) !important;
     }
 
     [data-color-mode="dark"] .header_container .hero_content p {
@@ -437,9 +438,7 @@
 
     [data-color-mode="dark"] .header_container .hero_content .btn_container .hero_btn2 {
       border: 1px solid var(--primary-7);
-      ;
       color: var(--primary-7);
-      ;
       background: #242e34;
     }
 
