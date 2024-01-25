@@ -1,3 +1,7 @@
+.App {
+	font-family: Inter, var(--markdown-font), Arial, Helvetica, sans-serif;
+}
+
 * {
   font-family: Inter, var(--markdown-font), Arial, Helvetica, sans-serif;
   --white: #FFF;
@@ -16,6 +20,17 @@
   --gradient-1: linear-gradient(100deg, #A073FF 0%, #744FFE 100%);
   --gradient-2: linear-gradient(100deg, #FFD2B9 0%, #BC93DA 51%, #744FFE 100%);
   --Header-border-color: #e0e0e05b;
+}
+
+/* ------------------------------------------- HEADER ------------------------------------------- */
+@media only screen and (max-width: 1500px) and (min-width: 1435px) {
+  .Header-topuTMpygDG4e1V.rm-Header-top, .rm-Header-bottom {
+    padding: 0 80px;
+  }
+
+  .rm-Guides {
+    margin-left: 80px; 
+  }
 }
 
 .Header3zzata9F_ZPQ.rm-Header .active {
@@ -37,4 +52,62 @@
 
 .rm-Header-bottom {
 	height: 50px;
+}
+
+/* ------------------------------------------- SIDEBAR ------------------------------------------- */
+.rm-Sidebar-heading {
+	color: var(--primary-2) !important;
+  margin-bottom: 8px !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+}
+
+.rm-Sidebar-link {
+  border-radius: 6px !important;
+  color: #5A5A5A !important;
+}
+
+ .rm-Sidebar .active {
+  background: var(--primary-4) !important;
+  border-radius: 4px !important;
+  color: var(--Primary-1) !important;
+}
+
+.rm-Sidebar-list .active{
+  background: var(--primary-4) !important;
+  color: var(--Primary-1) !important;
+}
+
+.rm-Sidebar-section {  
+  margin: 0 !important;
+  margin-top:24px !important;
+}
+
+.rm-Sidebar-link {
+  padding-top: 6px !important;
+  padding-bottom: 6px !important;
+}
+
+.Sidebar-link-textLuTE1ySm4Kqn {
+  display: flex;
+  justify-items:space-between !important;
+}
+
+.Sidebar-link_parent3OBrzjAJRSfq{
+  padding-left: 15px !important;
+}
+
+.rm-Sidebar-list a button {
+ order: 2; 
+}
+
+.Sidebar-link-textLuTE1ySm4Kqn {
+  display: flex !important;
+  justify-content: space-between !important;
+  width: 242px;
+}
+
+.rm-Sidebar-list .subpage {
+  margin-left: 0px !important;
+  padding-left: 32px !important;
 }
