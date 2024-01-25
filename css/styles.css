@@ -1,5 +1,5 @@
 * {
-  font-family: Inter;
+  font-family: Inter, var(--markdown-font), Arial, Helvetica, sans-serif;
   --white: #FFF;
   --black: #000;
   --primary-1: #744FFE;
