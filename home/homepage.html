@@ -118,6 +118,7 @@
       margin: auto;
       justify-content: center;
       align-items: stretch;
+      width: 100%;
     }
 
     .main_container .card {
@@ -140,20 +141,20 @@
     }
 
     .main_container .large_card {
-      flex: 3.5;
+      flex: 3;
     }
 
-    .main_container .large_card .card_image {
+    /* .main_container .large_card .card_image {
       width: 60%;
-    }
+    } */
 
     .main_container .small_card {
-      flex: 2.5;
+      flex: 2;
     }
 
-    .main_container .small_card .card_image {
+    /* .main_container .small_card .card_image {
       width: 30%;
-    }
+    } */
 
     .main_container .card_image {
       height: 120px;
@@ -478,13 +479,11 @@
     <div class="header_container">
       <div class="header_content">
         <div class="hero_title">
-          <h1>Digitz documentation</h1>
+          <h1>deets Documentation</h1>
         </div>
         <div class="hero_content">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore
-            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+            Explore our guides and examples to integrate deets in order to overcome challenges in legacy payment systems, including regulatory compliance and merchant onboarding.
           </p>
           <div class="btn_container">
             <a class="hero_btn1" href="docs">Get Started</a>
@@ -496,43 +495,39 @@
   </header>
   <main class="main_container">
     <section class="card_container card_container1">
-      <div class="card large_card" onclick="window.location='docs/introduction'">
+      <div class="card large_card" onclick="window.location='docs'">
         <div class="card_image image1">
         </div>
         <div class="card_text">
           <h3>Get Started</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna</p>
+          <p>Learn more about how deets can help you with tokenization, PCI compliance, and merchant onboarding.</p>
         </div>
       </div>
-      <div class="card small_card" onclick="window.location='docs/introduction'">
+      <div class="card small_card" onclick="window.location='docs/deets-iframe'">
         <div class="card_image image2">
         </div>
         <div class="card_text">
           <h3>Integration</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna</p>
+          <p>Learn how to integrate deets into your solution following just a few steps.</p>
         </div>
       </div>
     </section>
 
     <section class="card_container card_container2">
-      <div class="card small_card" onclick="window.location='reference/introduction'">
+      <div class="card small_card" onclick="window.location='docs/myiq'">
         <div class="card_image image3">
         </div>
         <div class="card_text">
-          <h3>Partner Onboarding</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna</p>
+          <h3>Payment Management</h3>
+          <p>Manage your whole payments ecosystem using MyIQ's intuitive interface. </p>
         </div>
       </div>
-      <div class="card large_card" onclick="window.location='reference/introduction'">
+      <div class="card large_card" onclick="window.location='docs/myvalet'">
         <div class="card_image image4">
         </div>
         <div class="card_text">
           <h3>Merchant Onboarding</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna</p>
+          <p>Quickly onboarding merchants by using the MyVale Merchant Account Creator (MAC).</p>
         </div>
       </div>
     </section>
