@@ -1,0 +1,113 @@
+{
+  "ACH": {
+    "paymentType": "ACH",
+    "merchantId": "{{merchantId}}",
+    "miscData": "{\"email\":\"johndoe@john.com\",\"originIp\":\"127.0.0.1\",\"customerIp\":\"127.0.0.1\",\"rawData\":\"Lorem ipsum\"}",
+    "StandardEntryClassCode": "WEB",
+    "bank": {
+      "bankName": "Wells Fargo",
+      "accountType": "checking",
+      "accountName": "MegaCorp",
+      "accountNumber": "1234567",
+      "routingNumber": "026009593"
+    },
+    "transaction": {
+      "amount": "3635",
+      "currency": "USD",
+      "invoice": "Payment-ACH-02"
+    }
+  },
+  "token": {
+    "paymentType": "tokenv3",
+    "merchantId": "{{merchantId}}",
+    "miscData": "{\"email\":\"johndoe@john.com\",\"originIp\":\"127.0.0.1\",\"customerIp\":\"127.0.0.1\",\"rawData\":\"Lorem ipsum\"}",
+    "token": {
+      "tokenId": "{{token}}",
+      "holder": "Tommy",
+      "expiry": "0229",
+      "useAVS": true
+    },
+    "transaction": {
+      "amount": "001",
+      "currency": "USD",
+      "invoice": "PAYMENT-TOKEN-7"
+    },
+    "billingAddress": {
+      "line1": "21 Jump Street",
+      "line2": "Suite 007",
+      "city": "Los Angeles",
+      "state": "CA",
+      "zip": "832044716",
+      "country": "USA"
+    }
+  },
+  "Token split": {
+    "paymentType": "tokenv3Split",
+    "merchantId": "{{merchantId}}",
+    "miscData": "{\"email\":\"johndoe@john.com\",\"originIp\":\"127.0.0.1\",\"customerIp\":\"127.0.0.1\",\"rawData\":\"Lorem ipsum\"}",
+    "token": {
+      "tokenId": "{{token}}",
+      "holder": "John Doe",
+      "expiry": "0229",
+      "useAVS": true
+    },
+    "transaction": {
+      "amount": "500",
+      "currency": "USD",
+      "invoice": "PAYMENT-TOKEN-7"
+    },
+    "split": {
+      "merchantId": "{{merchantId2}}",
+      "amount": "100"
+    },
+    "billingAddress": {
+      "line1": "21 Jump Street",
+      "line2": "Suite 007",
+      "city": "Los Angeles",
+      "state": "CA",
+      "zip": "83204",
+      "country": "USA"
+    }
+  },
+  "second Split": {
+    "paymentType": "secondSplit",
+    "merchantId": "{{merchantId}}",
+    "miscData": "testData",
+    "split": {
+      "merchantId": "{{merchantId2}}",
+      "amount": "100"
+    },
+    "originalTransaction": {
+      "id": "{{originalSplitId}}"
+    }
+  },
+  "refund": {
+    "miscData": "Customer Initiated Refund",
+    "paymentType": "cardRefund",
+    "merchantId": "{{merchantId}}",
+    "transaction": {
+      "amount": "500",
+      "currency": "USD",
+      "invoice": "123456"
+    },
+    "originalTransaction": {
+      "id": "{{cardpaymentId}}"
+    }
+  },
+  "Split refund": {
+    "paymentType": "cardSplitRefund",
+    "merchantId": "{{merchantId}}",
+    "split": {
+      "merchantId": "{{merchantId2}}",
+      "amount": "000"
+    },
+    "transaction": {
+      "amount": "500",
+      "currency": "USD",
+      "invoice": "123456"
+    },
+    "originalSplit": {
+      "id": "{{splitpaymentId}}"
+    }
+  }
+}

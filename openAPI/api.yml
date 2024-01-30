@@ -232,47 +232,124 @@ paths:
                       type: object
                       description: A key for grouping payment identification data.
                       properties:
-                        miscData:
-                          type: string
-                          description: Additional data to store along the call (optional).
                         paymentType:
                           type: string
-                          enum:
-                            - cardSplitRefund
                           description: The type of payment transaction.
+                          enum:
+                            - ACH
+                            - tokenv3
+                            - tokenv3Split
+                            - secondSplit
+                            - cardRefund
+                            - cardSplitRefund
                         merchantId:
                           type: string
                           description: The merchant account number.
+                        miscData:
+                          type: string
+                          description: Optional additional information to store with the call (optional).
+                        StandardEntryClassCode:
+                          type: string
+                          description: >-
+                            Must be WEB. **Required only for payment type `ACH`**.
+                        bank:
+                          type: object
+                          description: >-
+                            A key for grouping ACH bank information.
+                            **Required only for payment type `ACH`**.
+                          properties:
+                            accountType:
+                              type: string
+                              description: The type of bank account (Checking or Savings).
+                            accountName:
+                              type: string
+                              description: The first and last name of the account holder.
+                            accountNumber:
+                              type: string
+                              description: The financial institution account number.
+                            routingNumber:
+                              type: string
+                              description: The bank routing number. Required if the payment method is checking or savings. Test environment requires a real routing number.
+                        transaction:
+                          type: object
+                          description: >-
+                            A key for grouping payment transaction data.
+                            **Required for all payment types except `secondSplit`**.
+                          properties:
+                            amount:
+                              type: integer
+                              description: The transaction amount in cents.
+                            currency:
+                              type: string
+                              description: The three-character code.
+                            invoice:
+                              type: string
+                              description: The invoice number for the transaction.
+                        token:
+                          type: object
+                          description: A key for grouping payment token information.
+                          properties:
+                            holder:
+                              type: string
+                              description: The first and last name on the account.
+                            tokenId:
+                              type: string
+                              description: The Token ID retrieved from the embedded checkout.
+                            expiry:
+                              type: string
+                              description: The expiration date of the payment method.
+                            useAVS:
+                              type: boolean
+                              description: True/False for requiring a ZIP match (or greater) to capture the payment.
+                        billingAddress:
+                          type: object
+                          description: A key for grouping billing address data.
+                          properties:
+                            line1:
+                              type: string
+                              description: The card holder’s street address (optional but recommended).
+                            line2:
+                              type: string
+                              description: The card holder’s additional street address information (optional but recommended).
+                            city:
+                              type: string
+                              description: The card holder’s home city (optional but recommended).
+                            state:
+                              type: string
+                              description: The card holder’s home state (optional but recommended).
+                            zip:
+                              type: string
+                              description: The card holder’s zip or postal code (optional, but recommended.)
+                            country:
+                              type: string
+                              description: The card holder’s home country (optional but recommended).
                         split:
                           type: object
-                          description: A key for grouping the second merchant's ID.
+                          description: A key for grouping split information.
                           properties:
                             merchantId:
                               type: string
-                              description: The second merchant account number where the split money has gone.
+                              description: The merchant ID for the split transaction.
                             amount:
                               type: string
-                              description: Set to "000" for the time being.
-                    transaction:
-                      type: object
-                      description: A key for grouping payment transaction data.
-                      properties:
-                        amount:
-                          type: string
-                          description: The transaction amount in cents.
-                        currency:
-                          type: string
-                          description: The three-character code.
-                        invoice:
-                          type: string
-                          description: The invoice number for the transaction.
-                        originalSplit:
+                              description: The amount to be split in cents.
+                        originalTransaction:
                           type: object
-                          description: A key for grouping the ID of the original payment to be refunded.
+                          description: A key for referencing the original split transaction.
                           properties:
                             id:
                               type: string
-                              description: The transaction ID to refund.
+                              description: The ID of the original split transaction.
+                        originalSplit:
+                          type: object
+                          description: A key for referencing the original payment to be refunded.
+                          properties:
+                            id:
+                              type: string
+                              description: The transaction ID to be refunded.
+
+
+
       responses:
         '201':
           description: 'Created'
