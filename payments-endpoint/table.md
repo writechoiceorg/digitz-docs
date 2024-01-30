@@ -5,7 +5,7 @@
 | miscData               |✅          |✅         |✅            |✅          |✅          |✅              |
 | StandardEntryClassCode |✅          |❌         |❌            |❌          |❌          |❌              |
 | bank                   |✅          |❌         |❌            |❌          |❌          |❌              |
-| transaction            |✅          |❌         |✅            |❌          |✅          |✅              |
+| transaction            |✅          |✅         |✅            |❌          |✅          |✅              |
 | token                  |❌          |✅         |✅            |❌          |❌          |❌              |
 | billingAddress         |❌          |✅         |✅            |❌          |❌          |❌              |
 | split                  |❌          |❌         |✅            |✅          |❌          |✅              |
