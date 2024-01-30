@@ -1078,6 +1078,16 @@ paths:
       operationId: create-merchant
       description: >-
         Use endpoint **POST** `/merchants` to set up a new merchant account.
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          description: >-
+            appToken created by `/auth/token`
+
+            <small>Format:  `Bearer xxxxxx...`</small>
+          example: Bearer <appToken>
       requestBody:
         required: true
         content:
@@ -1275,7 +1285,107 @@ paths:
                       id:
                         type: string
                         description: A merchant identifier. This is the account where the split goes after the transaction settles.
+    get:
+      tags:
+        - Merchants
+      summary: Test API-Get Merchant List
+      operationId: get-merchant-list
+      description: >-
+        Use endpoint **GET** `/merchants?limit=20` to view a list of the
+        merchants
 
+        > 📘 Note
+        
+        > There are no request parameters for this endpoint, Also change
+        `limit` in the URI to whatever integer value of items you want to
+        receive.
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          description: >-
+            appToken created by `/auth/token`
+
+            <small>Format:  `Bearer xxxxxx...`</small>
+          example: Bearer <appToken>
+        - name: limit
+          in: query
+          schema:
+            type: integer
+          description: Limit's the amount of items that will be returned.
+          example: 25
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              examples:
+                ok:
+                  value: |-
+                    {
+                      "link": {
+                        "self": "x"
+                      },
+                      "meta": {
+                        "limit": 25,
+                        "items": 25,
+                        "more": true
+                      },
+                      "data": [
+                        {
+                          "id": "merchantId",
+                          "attributes": {
+                            "accountName": "Huyen Dinh",
+                            "accountType": "business",
+                            "created": "2019-10-10T19:27:00.680Z"
+                          },
+                          "type": "merchants"
+                        }
+                      ]
+                    }
+              schema:
+                type: object
+                properties:
+                  meta:
+                    type: object
+                    description: A key for grouping different types of API data.
+                    properties:
+                      items:
+                        type: integer
+                        description: The number of items in the database. It is equal to or smaller than the limit’s value.
+                      limit:
+                        type: string
+                        description: The maximum number of results to return.
+                      more:
+                        type: boolean
+                        description: A true/false value that indicates whether “items” or “limit” allows more results.
+                  data:
+                    type: array
+                    description: A key for grouping results.
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          description: The merchant identification string in Digitzs.
+                        attributes:
+                          type: object
+                          description: A key for grouping identification and payment information.
+                          properties:
+                            accountName:
+                              type: string
+                              description: The name of the individual or business associated with the account.
+                            accountType:
+                              type: string
+                              description: The account type (Personal or Business).
+                            created:
+                              type: string
+                              format: date-time
+                              description: The date and time that the payment was created.
+                            type:
+                              type: string
+                              description: The transaction type. Must equal “merchants”.
 x-readme:
   headers: []
   explorer-enabled: true
