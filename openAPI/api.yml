@@ -200,8 +200,8 @@ paths:
     post:
       tags:
         - Payments
-      summary: Payments
-      operationId: payments
+      summary: Create Payments
+      operationId: create-payments
       description: >-
         Use endpoint **POST** `/payments` to refund the split of a payment.
       parameters:
