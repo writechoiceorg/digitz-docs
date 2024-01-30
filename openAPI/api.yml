@@ -200,8 +200,8 @@ paths:
     post:
       tags:
         - Payments
-      summary: Test API-Split refund
-      operationId: split-refund
+      summary: Payments
+      operationId: payments
       description: >-
         Use endpoint **POST** `/payments` to refund the split of a payment.
       parameters:
@@ -425,7 +425,7 @@ paths:
     get:
       tags:
         - Payments
-      summary: Test API-Get payment List for Merchant
+      summary: Get payment List for Merchant
       operationId: get-payment-list-for-merchant
       description: >-
         Use endpoint **GET** `/payments` to retrieve a list of transactions
@@ -769,7 +769,7 @@ paths:
     get:
       tags:
         - Payments
-      summary: Test API-Get payment by Id
+      summary: Get payment by Id
       operationId: get-payment-by-id
       description: >-
         Use endpoint **GET** `/payments/{paymentId}` to retrieve data from an existing transaction.
@@ -954,7 +954,7 @@ paths:
     get:
       tags:
         - Payments
-      summary: Test API-Get payment status by Id
+      summary: Get payment status by Id
       operationId: get-payment-status-by-id
       description: >-
         Use endpoint **GET** `/payments/{paymentId}` to retrieve data from an existing transaction
@@ -1151,7 +1151,7 @@ paths:
     post:
       tags:
         - Merchants
-      summary: Test API-Create Merchant
+      summary: Create Merchant
       operationId: create-merchant
       description: >-
         Use endpoint **POST** `/merchants` to set up a new merchant account.
@@ -1365,7 +1365,7 @@ paths:
     get:
       tags:
         - Merchants
-      summary: Test API-Get Merchant List
+      summary: Get Merchant List
       operationId: get-merchant-list
       description: >-
         Use endpoint **GET** `/merchants?limit=20` to view a list of the
@@ -1467,7 +1467,7 @@ paths:
     get:
       tags:
         - Merchants
-      summary: Test API-Get Merchant by Id
+      summary: Get Merchant by Id
       operationId: get-merchant-by-id
       description: >-
         Use endpoint **GET**  `/merchants/{merchantId}` to view information
@@ -1709,7 +1709,7 @@ paths:
     put:
       tags:
         - Merchants
-      summary: Test API-Put Update Merchant's AVS Mode
+      summary: Put Update Merchant's AVS Mode
       operationId: update-merchant
       description: >-
         Use endpoint **PUT** `/merchants/{merchantId}` to update the AVS mode
