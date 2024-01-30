@@ -1070,6 +1070,212 @@ paths:
                                   type: string
                                   description: The status of the transaction       
       deprecated: false
+  /merchants:
+    post:
+      tags:
+        - Merchants
+      summary: Test API-Create Merchant
+      operationId: create-merchant
+      description: >-
+        Use endpoint **POST** `/merchants` to set up a new merchant account.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: A key for grouping different types of API data.
+                  properties:
+                    type:
+                      type: string
+                      description: The type of transaction. This value must be "merchants".
+                    attributes:
+                      type: object
+                      description: A key for grouping identification and payment information.
+                      properties:
+                        AVS:
+                          type: string
+                          description: The AVS mode to set merchant to. Can be `Standard`, `Moderate`, or `Enhanced`.
+                        accountType:
+                          type: string
+                          description: The type of bank account (personal or business). If set to business, enables and requires the businessInfo and businessAddress groupings.
+                        accountName:
+                          type: string
+                          description: The first and last name of the account holder, or if a business, use the business's name. This is also the Statement Descriptor that customers will see on their bank.
+                        personalInfo:
+                          type: object
+                          description: A key for grouping personal information.
+                          properties:
+                            firstName:
+                              type: string
+                              description: The merchant’s first name.
+                            lastName:
+                              type: string
+                              description: The merchant’s last name.
+                            email:
+                              type: string
+                              description: The merchant's email address.
+                            dayPhone:
+                              type: string
+                              description: The merchant’s daytime contact number.
+                            eveningPhone:
+                              type: string
+                              description: The merchant’s evening contact number.
+                            birthDate:
+                              type: string
+                              description: The merchant’s date of birth. Use "01-01-1981" for the test environment.
+                            socialSecurity:
+                              type: string
+                              description: The merchant’s social security number.
+                        personalAddress:
+                          type: object
+                          description: A key for grouping personal address information.
+                          properties:
+                            line1:
+                              type: string
+                              description: The personal street address.
+                            line2:
+                              type: string
+                              description: A second line for street address information.
+                            city:
+                              type: string
+                              description: The city where the individual is located.
+                            state:
+                              type: string
+                              description: The state where the individual is located. See State and Province Codes for more information.
+                            zip:
+                              type: string
+                              description: The postal code where the individual is located.
+                            country:
+                              type: string
+                              description: The three-character country code. See Country Codes for more information.
+                        businessInfo:
+                          type: object
+                          description: A key for grouping business information.
+                          properties:
+                            businessName:
+                              type: string
+                              description: The legal name of the business as registered.
+                            ein:
+                              type: string
+                              description: The Employer Identification Number (EIN).
+                            phone:
+                              type: string
+                              description: The Business Phone Number (Optional).
+                            email:
+                              type: string
+                              description: The Business Email (Optional).
+                            url:
+                              type: string
+                              description: The Business's website URL (optional).
+                        businessAddress:
+                          type: object
+                          description: A key for grouping business address information.
+                          properties:
+                            line1:
+                              type: string
+                              description: The business street address.
+                            line2:
+                              type: string
+                              description: A second street address line.
+                            city:
+                              type: string
+                              description: The city where the business is located.
+                            state:
+                              type: string
+                              description: The state where the business is located.
+                            zip:
+                              type: string
+                              description: The postal code where the business is located.
+                            country:
+                              type: string
+                              description: The three-character country code.
+                        bankInfo:
+                          type: object
+                          description: A key for grouping banking information.
+                          properties:
+                            bankName:
+                              type: string
+                              description: The name of the financial institution.
+                            accountOwnership:
+                              type: string
+                              description: The valid values are Personal or Business.
+                            accountType:
+                              type: string
+                              description: The type of bank account (Checking or Savings).
+                            accountName:
+                              type: string
+                              description: The Account name attached to the bank account. (Either account holder's name, or the business name)
+                            accountNumber:
+                              type: string
+                              description: The financial institution account number. It is required if boarding with the primary bank on file.
+                            routingNumber:
+                              type: string
+                              description: The bank routing number. This is required if the payment method is checking or savings. Test environment requires a real routing number.
+                        verificationData:
+                          type: object
+                          description: A key for grouping server and timestamp information.
+                          properties:
+                            ipAddress:
+                              type: string
+                              description: The IP address used for the transaction.
+                            emailVerified:
+                              type: boolean
+                              description: A true or false value.
+                            emailVerifiedTimestamp:
+                              type: string
+                              format: date-time
+                              description: The date and time the email was sent.
+                            signature:
+                              type: string
+                              description: The first and last name of the customer.
+                            signatureTimestamp:
+                              type: string
+                              format: date-time
+                              description: The date and time the transaction was authorized.
+                            termsAccepted:
+                              type: boolean
+                              description: A true or false value.
+                            threatMatrixPolicy:
+                              type: string
+                              description: Defaults to `Default`, Policy to use for ThreatMetrix (optional).
+                            threatMetrixSessionId:
+                              type: string
+                              description: A unique identifier (preferably uuidv4), previously used for ThreatMetrix Embed. See the ThreatMetrix documentation for more information (optional).
+      responses:
+        '201':
+          description: 'Created'
+          content:
+            application/json:
+              examples:
+                ok:
+                  value: |-
+                    {
+                      "links": {
+                        "self": "x"
+                      },
+                      "data": {
+                        "type": "merchants",
+                        "id": "merchantId"
+                      }
+                    }
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    description: A key for grouping different types of API data.
+                    properties:
+                      type:
+                        type: string
+                        description: The type of transaction. This value must be "merchants".
+                      id:
+                        type: string
+                        description: A merchant identifier. This is the account where the split goes after the transaction settles.
+
 x-readme:
   headers: []
   explorer-enabled: true
