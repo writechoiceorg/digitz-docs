@@ -347,9 +347,6 @@ paths:
                             id:
                               type: string
                               description: The transaction ID to be refunded.
-
-
-
       responses:
         '201':
           description: 'Created'
@@ -364,15 +361,22 @@ paths:
                       },
                       "data": {
                         "type": "payments",
-                        "id": "refundId",
+                        "id": "{paymentId}",
                         "attributes": {
-                          "paymentType": "cardSplitRefund",
+                          "paymentType": "card",
                           "transaction": {
                             "code": "0",
                             "message": "Success",
                             "amount": "500",
                             "invoice": "123456",
-                            "currency": "USD"
+                            "currency": "USD",
+                            "authCode": "A11111",
+                            "avsResult": "T",
+                            "gross": "500",
+                            "net": "450",
+                            "grossMinusNet": "50",
+                            "fee": "35",
+                            "rate": "2.95"
                           }
                         }
                       }
