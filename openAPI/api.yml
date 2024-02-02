@@ -234,12 +234,16 @@ paths:
                       properties:
                         paymentType:
                           type: string
-                          description: The type of payment transaction.
+                          description: >-
+                            The type of payment transaction.
+
+                            - `tokenv3`: Use this to create a regular a payment.
+                            - `tokenv3Split`: Use this to create a payment split between 2 MIDs.
+                            - `cardRefund`: Use this to create a refund for a regular payment.
+                            - `cardSplitRefund`: Use this to create a refund for split payments.
                           enum:
-                            - ACH
                             - tokenv3
                             - tokenv3Split
-                            - secondSplit
                             - cardRefund
                             - cardSplitRefund
                         merchantId:
