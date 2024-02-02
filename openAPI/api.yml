@@ -3,7 +3,8 @@ info:
   title: Digitzs API
   version: 1.0.0
 servers:
-  - url: http://{{endpoint}}
+  - url: https://test.digitzsapi.com/test
+  - url: https://beta.digitzsapi.com/v3
 tags:
     - name: Authorization
     - name: Payments
@@ -244,7 +245,7 @@ paths:
                             - `cardRefund`: Use this to create a refund for a regular payment.
 
                             - `cardSplitRefund`: Use this to create a refund for split payments.
-                            
+
                           enum:
                             - tokenv3
                             - tokenv3Split
