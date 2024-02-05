@@ -9,7 +9,7 @@ on:
 jobs:
   sync_authorization:
     runs-on: ubuntu-latest
-    if: "!contains(github.event.commits[*].added, 'openAPI/authorization.yml')"
+    if: "contains(github.event.commits[*].added, 'openAPI/authorization.yml')"
     steps:
       - name: Checkout this repo
         uses: actions/checkout@v3
@@ -21,7 +21,7 @@ jobs:
 
   sync_merchant:
     runs-on: ubuntu-latest
-    if: "!contains(github.event.commits[*].added, 'openAPI/merchant.yml')"
+    if: "contains(github.event.commits[*].added, 'openAPI/merchant.yml')"
     steps:
       - name: Checkout this repo
         uses: actions/checkout@v3
@@ -33,7 +33,7 @@ jobs:
 
   sync_payments:
     runs-on: ubuntu-latest
-    if: "!contains(github.event.commits[*].added, 'openAPI/payments.yml')"
+    if: "contains(github.event.commits[*].added, 'openAPI/payments.yml')"
     steps:
       - name: Checkout this repo
         uses: actions/checkout@v3
@@ -45,7 +45,7 @@ jobs:
 
   sync_payment_split:
     runs-on: ubuntu-latest
-    if: "!contains(github.event.commits[*].added, 'openAPI/payment-split.yml')"
+    if: "contains(github.event.commits[*].added, 'openAPI/payment-split.yml')"
     steps:
       - name: Checkout this repo
         uses: actions/checkout@v3
@@ -57,7 +57,7 @@ jobs:
 
   sync_refund:
     runs-on: ubuntu-latest
-    if: "!contains(github.event.commits[*].added, 'openAPI/refund.yml')"
+    if: "contains(github.event.commits[*].added, 'openAPI/refund.yml')"
     steps:
       - name: Checkout this repo
         uses: actions/checkout@v3
@@ -69,7 +69,7 @@ jobs:
 
   sync_refund_split:
     runs-on: ubuntu-latest
-    if: "!contains(github.event.commits[*].added, 'openAPI/refund-split.yml')"
+    if: "contains(github.event.commits[*].added, 'openAPI/refund-split.yml')"
     steps:
       - name: Checkout this repo
         uses: actions/checkout@v3
