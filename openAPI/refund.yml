@@ -82,7 +82,7 @@ paths:
                             The type of payment transaction.
                           enum:
                             - cardRefund
-                          default: cardRefund
+                          example: cardRefund
                         merchantId:
                           type: string
                           description: The merchant account number.

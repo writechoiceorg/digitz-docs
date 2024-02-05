@@ -82,7 +82,7 @@ paths:
                             The type of payment transaction.
                           enum:
                             - tokenv3
-                          default: tokenv3
+                          example: tokenv3
                         merchantId:
                           type: string
                           description: The merchant account number.
