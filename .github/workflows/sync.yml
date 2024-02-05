@@ -9,7 +9,7 @@ on:
 jobs:
   sync_authorization:
     runs-on: ubuntu-latest
-    if: contains(github.event.commits[*].added, 'openAPI/authorization.yml')
+    if: "!contains(github.event.commits[*].added, 'openAPI/authorization.yml')"
     steps:
       - name: Checkout this repo
         uses: actions/checkout@v3
