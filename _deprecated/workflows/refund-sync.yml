@@ -4,7 +4,7 @@ name: Sync OpenAPI definition to ReadMe
 on:
   push:
     paths:
-      - 'openAPI/api.yml'
+      - 'openAPI/refund.yml'
 
 jobs:
   sync:
@@ -19,4 +19,4 @@ jobs:
         # Docs: https://docs.github.com/actions/using-workflows/workflow-syntax-for-github-actions#example-using-versioned-actions
         uses: readmeio/rdme@v8
         with:
-          rdme: openapi ./openAPI/api.yml --key=${{ secrets.README_API_KEY }} --id=${{ secrets.API_DEFINITION_ID }}
+          rdme: openapi ./openAPI/refund.yml --key=${{ secrets.README_API_KEY }} --id=${{ secrets.REFUND_ID }}
