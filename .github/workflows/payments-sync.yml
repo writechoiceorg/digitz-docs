@@ -7,7 +7,7 @@ on:
       - 'openAPI/payments.yml'
 
 jobs:
-  sync:
+  payments-sync:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout this repo

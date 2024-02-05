@@ -7,7 +7,7 @@ on:
       - 'openAPI/refund.yml'
 
 jobs:
-  sync:
+  refund-sync:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout this repo

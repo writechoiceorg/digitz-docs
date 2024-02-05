@@ -7,7 +7,7 @@ on:
       - 'openAPI/refund-split.yml'
 
 jobs:
-  sync:
+  refund-split-sync:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout this repo

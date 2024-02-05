@@ -7,7 +7,7 @@ on:
       - 'openAPI/merchant.yml'
 
 jobs:
-  sync:
+  merchant-sync:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout this repo
