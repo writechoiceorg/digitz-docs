@@ -71,6 +71,7 @@ paths:
                   properties:
                     type:
                       type: string
+                      example: merchants
                       description: The type of transaction. This value must be "merchants".
                     attributes:
                       type: object
@@ -78,12 +79,15 @@ paths:
                       properties:
                         AVS:
                           type: string
+                          example: Standard
                           description: The AVS mode to set merchant to. Can be `Standard`, `Moderate`, or `Enhanced`.
                         accountType:
                           type: string
+                          example: business
                           description: The type of bank account (personal or business). If set to business, enables and requires the businessInfo and businessAddress groupings.
                         accountName:
                           type: string
+                          example: ACME Enterprise
                           description: The first and last name of the account holder, or if a business, use the business's name. This is also the Statement Descriptor that customers will see on their bank.
                         personalInfo:
                           type: object
@@ -91,24 +95,31 @@ paths:
                           properties:
                             firstName:
                               type: string
+                              example: John
                               description: The merchant’s first name.
                             lastName:
                               type: string
+                              example: Doe
                               description: The merchant’s last name.
                             email:
                               type: string
+                              example: johndoe@email.com
                               description: The merchant's email address.
                             dayPhone:
                               type: string
+                              example: "3105551222"
                               description: The merchant’s daytime contact number.
                             eveningPhone:
                               type: string
+                              example: "3105551222"
                               description: The merchant’s evening contact number.
                             birthDate:
                               type: string
+                              example: "01-01-1981"
                               description: The merchant’s date of birth. Use "01-01-1981" for the test environment.
                             socialSecurity:
                               type: string
+                              example: "123456789"
                               description: The merchant’s social security number.
                         personalAddress:
                           type: object
@@ -116,21 +127,27 @@ paths:
                           properties:
                             line1:
                               type: string
+                              example: 21 Jump Street
                               description: The personal street address.
                             line2:
                               type: string
+                              example: Suite 007
                               description: A second line for street address information.
                             city:
                               type: string
+                              example: Los Angeles
                               description: The city where the individual is located.
                             state:
                               type: string
+                              example: CA
                               description: The state where the individual is located. See State and Province Codes for more information.
                             zip:
                               type: string
+                              example: "90210"
                               description: The postal code where the individual is located.
                             country:
                               type: string
+                              example: USA
                               description: The three-character country code. See Country Codes for more information.
                         businessInfo:
                           type: object
@@ -138,18 +155,23 @@ paths:
                           properties:
                             businessName:
                               type: string
+                              example: Legal Name LLC
                               description: The legal name of the business as registered.
                             ein:
                               type: string
+                              example: 123456789
                               description: The Employer Identification Number (EIN).
                             phone:
                               type: string
+                              example: 5555555555
                               description: The Business Phone Number (Optional).
                             email:
                               type: string
+                              example: test@email.co
                               description: The Business Email (Optional).
                             url:
                               type: string
+                              example: https://test.com
                               description: The Business's website URL (optional).
                         businessAddress:
                           type: object
@@ -157,21 +179,27 @@ paths:
                           properties:
                             line1:
                               type: string
+                              example: 21 Jump Streets
                               description: The business street address.
                             line2:
                               type: string
+                              example: Suite 007
                               description: A second street address line.
                             city:
                               type: string
+                              example: Los ANgeles
                               description: The city where the business is located.
                             state:
                               type: string
+                              example: CA
                               description: The state where the business is located.
                             zip:
                               type: string
+                              example: "90210"
                               description: The postal code where the business is located.
                             country:
                               type: string
+                              example: USA
                               description: The three-character country code.
                         bankInfo:
                           type: object
@@ -179,21 +207,27 @@ paths:
                           properties:
                             bankName:
                               type: string
+                              example: Bank of Abundance
                               description: The name of the financial institution.
                             accountOwnership:
                               type: string
+                              example: business
                               description: The valid values are Personal or Business.
                             accountType:
                               type: string
+                              example: checking
                               description: The type of bank account (Checking or Savings).
                             accountName:
                               type: string
+                              example: doe's money account
                               description: The Account name attached to the bank account. (Either account holder's name, or the business name)
                             accountNumber:
                               type: string
+                              example: "2341234321"
                               description: The financial institution account number. It is required if boarding with the primary bank on file.
                             routingNumber:
                               type: string
+                              example: "000000000"
                               description: The bank routing number. This is required if the payment method is checking or savings. Test environment requires a real routing number.
                         verificationData:
                           type: object
@@ -201,29 +235,37 @@ paths:
                           properties:
                             ipAddress:
                               type: string
+                              example: "192.168.0.1"
                               description: The IP address used for the transaction.
                             emailVerified:
                               type: boolean
+                              example: true
                               description: A true or false value.
                             emailVerifiedTimestamp:
                               type: string
+                              example: "2016-01-31T11:16:07.234Z"
                               format: date-time
                               description: The date and time the email was sent.
                             signature:
                               type: string
+                              example: Huyen dinh
                               description: The first and last name of the customer.
                             signatureTimestamp:
                               type: string
+                              example: "2016-01-31T11:16:07.234Z"
                               format: date-time
                               description: The date and time the transaction was authorized.
                             termsAccepted:
                               type: boolean
+                              example: true
                               description: A true or false value.
                             threatMatrixPolicy:
                               type: string
+                              example: Default
                               description: Defaults to `Default`, Policy to use for ThreatMetrix (optional).
                             threatMetrixSessionId:
                               type: string
+                              example: uuidv4
                               description: A unique identifier (preferably uuidv4), previously used for ThreatMetrix Embed. See the ThreatMetrix documentation for more information (optional).
       responses:
         '201':
@@ -596,7 +638,7 @@ paths:
                                     type: boolean
                                     description: A true or false value.
     put:
-      summary: Put Update Merchant's AVS Mode
+      summary: Update Merchant's AVS Mode
       operationId: update-merchant
       description: >-
         Use endpoint **PUT** `/merchants/{merchantId}` to update the AVS mode
@@ -636,6 +678,7 @@ paths:
                   properties:
                     type:
                       type: string
+                      example: merchants
                       description: The type of transaction. This value must be "merchants".
                     attributes:
                       type: object
@@ -643,9 +686,11 @@ paths:
                       properties:
                         group:
                           type: string
+                          example: AVS
                           description: Must be `AVS` for updating the merchant's AVS setting. Enables `AVS` key.
                         AVS:
                           type: string
+                          example: Enhanced
                           description: The AVS mode to set the merchant to. Can be `Standard`, `Moderate`, or `Enhanced`.
       responses:
         '200':
