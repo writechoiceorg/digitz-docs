@@ -34,7 +34,7 @@ components:
       type: apiKey
       in: header
       name: x-api-key
-      example: "Bearer "
+      default: "Bearer "
 security:
   - sec0: []
 paths:
