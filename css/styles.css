@@ -70,12 +70,12 @@
  .rm-Sidebar .active {
   background: var(--primary-4) !important;
   border-radius: 4px !important;
-  color: var(--Primary-1) !important;
+  color: var(--primary-1) !important;
 }
 
 .rm-Sidebar-list .active{
   background: var(--primary-4) !important;
-  color: var(--Primary-1) !important;
+  color: var(--primary-1) !important;
 }
 
 .rm-Sidebar-section {  
@@ -110,4 +110,28 @@
 .rm-Sidebar-list .subpage {
   margin-left: 0px !important;
   padding-left: 32px !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  [data-color-mode="system"] .header_container .header_content h1 {
+    color: var(--primary-3) !important;
+  }
+}
+
+[data-color-mode="dark"] .rm-Sidebar-heading {
+	color: var(--primary-7) !important;
+}
+
+[data-color-mode="dark"] .rm-Sidebar-link {
+  color: var(--primary-5) !important;
+}
+
+[data-color-mode="dark"] .rm-Sidebar .active {
+  background: var(--primary-1) !important;
+  color: var(--primary-5) !important;
+}
+
+[data-color-mode="dark"] .rm-Sidebar-list .active{
+  background: var(--primary-1) !important;
+  color: var(--primary-5) !important;
 }
