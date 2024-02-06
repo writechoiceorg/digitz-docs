@@ -259,14 +259,14 @@ paths:
                               type: boolean
                               example: true
                               description: A true or false value.
-                            threatMatrixPolicy:
-                              type: string
-                              example: Default
-                              description: Defaults to `Default`, Policy to use for ThreatMetrix (optional).
-                            threatMetrixSessionId:
-                              type: string
-                              example: uuidv4
-                              description: A unique identifier (preferably uuidv4), previously used for ThreatMetrix Embed. See the ThreatMetrix documentation for more information (optional).
+                        threatMatrixPolicy:
+                          type: string
+                          example: Default
+                          description: Defaults to `Default`, Policy to use for ThreatMetrix (optional).
+                        threatMetrixSessionId:
+                          type: string
+                          example: x
+                          description: A unique identifier (preferably uuidv4), previously used for ThreatMetrix Embed. See the ThreatMetrix documentation for more information (optional).
       responses:
         '201':
           description: 'Created'
