@@ -17,6 +17,7 @@ components:
       type: string
       description: This API call type. This call must be `auth`.
       example: auth
+      default: auth
     attributes:
       type: object
       description: A key for grouping data.
