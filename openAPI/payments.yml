@@ -71,13 +71,14 @@ paths:
                   properties:
                     type:
                       type: string
+                      example: payments
                       description: The type of transaction.
                     attributes:
                       type: object
                       description: A key for grouping payment identification data.
                       properties:
                         paymentType:
-                          type: string
+                          type: strings
                           description: >-
                             The type of payment transaction.
                           enum:
@@ -85,9 +86,11 @@ paths:
                           example: tokenv3
                         merchantId:
                           type: string
+                          example: "{{merchantId}}"
                           description: The merchant account number.
                         miscData:
                           type: string
+                          example: "{\"email\":\"johndoe@john.com\",\"originIp\":\"127.0.0.1\",\"customerIp\":\"127.0.0.1\",\"rawData\":\"Lorem ipsum\"}"
                           description: Optional additional information to store with the call (optional).
                         transaction:
                           type: object
@@ -97,12 +100,15 @@ paths:
                           properties:
                             amount:
                               type: integer
+                              example: 001
                               description: The transaction amount in cents.
                             currency:
                               type: string
+                              example: USD
                               description: The three-character code.
                             invoice:
                               type: string
+                              example: PAYMENT-TOKEN-7
                               description: The invoice number for the transaction.
                         token:
                           type: object
@@ -110,15 +116,19 @@ paths:
                           properties:
                             holder:
                               type: string
+                              example: Tommy
                               description: The first and last name on the account.
                             tokenId:
                               type: string
+                              example: "{{token}}"
                               description: The Token ID retrieved from the embedded checkout.
                             expiry:
                               type: string
+                              example: "0229"
                               description: The expiration date of the payment method.
                             useAVS:
                               type: boolean
+                              example: true
                               description: True/False for requiring a ZIP match (or greater) to capture the payment.
                         billingAddress:
                           type: object
@@ -126,21 +136,27 @@ paths:
                           properties:
                             line1:
                               type: string
+                              example: 21 Jump Street
                               description: The card holder’s street address (optional but recommended).
                             line2:
                               type: string
+                              example: Suite 007
                               description: The card holder’s additional street address information (optional but recommended).
                             city:
                               type: string
+                              example: Los Angeles
                               description: The card holder’s home city (optional but recommended).
                             state:
                               type: string
+                              example: CA
                               description: The card holder’s home state (optional but recommended).
                             zip:
                               type: string
+                              example: "832044716"
                               description: The card holder’s zip or postal code (optional, but recommended.)
                             country:
                               type: string
+                              example: USA
                               description: The card holder’s home country (optional but recommended).
       responses:
         '201':
@@ -251,7 +267,7 @@ paths:
           schema:
             type: string
           description: The merchantId to query results by.
-          example: '<merchantId>'
+          example: "{{merchantId}}"
       responses:
         '200':
           description: Successful response for getting payments
@@ -585,6 +601,7 @@ paths:
         - name: cardpaymentId
           description: Unique identifier of the payment.
           in: path
+          example: "{{cardpaymentId}}"
           schema:
               type: string
           required: true
@@ -768,6 +785,7 @@ paths:
         - name: cardpaymentId
           description: Unique identifier of the payment.
           in: path
+          example: "{{cardpaymentId}}"
           schema:
               type: string
           required: true
