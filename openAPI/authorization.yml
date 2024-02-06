@@ -16,7 +16,7 @@ components:
     APIcallType:
       type: string
       description: This API call type. This call must be `auth`.
-      default: auth
+      example: auth
     attributes:
       type: object
       description: A key for grouping data.
@@ -34,6 +34,7 @@ components:
       type: apiKey
       in: header
       name: x-api-key
+      example: "Bearer "
 security:
   - sec0: []
 paths:
